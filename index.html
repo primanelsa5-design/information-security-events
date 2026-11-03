@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Облік подій інформаційної безпеки</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Облік подій інформаційної безпеки</h1>
+        <p>Система реєстрації та контролю інцидентів</p>
+    </header>
+
+    <main>
+        <section class="form-section">
+            <h2>Реєстрація нової події</h2>
+
+            <form id="eventForm">
+                <label for="eventType">Тип події:</label>
+                <select id="eventType" required>
+                    <option value="">Оберіть тип події</option>
+                    <option>Несанкціонований доступ</option>
+                    <option>Фішинг</option>
+                    <option>Шкідливе програмне забезпечення</option>
+                    <option>Витік даних</option>
+                    <option>Інша подія</option>
+                </select>
+
+                <label for="eventDate">Дата події:</label>
+                <input type="date" id="eventDate" required>
+
+                <label for="severity">Рівень критичності:</label>
+                <select id="severity" required>
+                    <option value="">Оберіть рівень</option>
+                    <option>Низький</option>
+                    <option>Середній</option>
+                    <option>Високий</option>
+                    <option>Критичний</option>
+                </select>
+
+                <label for="status">Статус події:</label>
+                <select id="status" required>
+                    <option>Нова</option>
+                    <option>В обробці</option>
+                    <option>Закрита</option>
+                </select>
+
+                <label for="description">Короткий опис:</label>
+                <textarea id="description" minlength="10" maxlength="500"
+                    placeholder="Опишіть обставини події..." required></textarea>
+
+                <button type="submit">Додати подію</button>
+            </form>
+        </section>
+
+        <section class="journal-section">
+            <h2>Журнал подій</h2>
+            <div id="eventList">
+                <p class="empty">Поки що подій не зареєстровано.</p>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>Навчальний проєкт з дисципліни «Технології програмування»</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
